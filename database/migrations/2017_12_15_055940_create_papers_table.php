@@ -13,10 +13,14 @@ class CreatePapersTable extends Migration
      */
     public function up()
     {
-        Schema::create('papers', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
-        });
+        DB::statement("CREATE TABLE `papers` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+");
+
     }
 
     /**
